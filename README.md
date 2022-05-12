@@ -13,6 +13,17 @@ The Plant Kit's compute is based on an ESP32 device, which we will program using
 * A WiFi connection nearby your device.
 * An AWS Account with permissions to create AWS IoT Core resources.
 
+### Cabling configuration
+
+In order to create a successful connection between the device and the computer, this cabling must be done: 
+
+* Connect the `+5V` pin of the ESP32 to the `VCC` pin of the programmer.
+* Connect any free `GND` port of the ESP32 to the `GND` pin of the programmer.
+* Connect the serial `Tx` pin of the ESP32 - it may be called `V0T` or `TXO` to the `Rx` port of the ESP32.
+* Connect the serial `Rx` pin of the ESP32 - it may be called `V0R` or `RXI` to the `Tx` port of the ESP32.
+
+You can verify you have a successful serial connection with the device by opening Arduino's _Serial Monitor_ to read the logs. Set Baud Rate to `115200`.
+
 ### Configuration
 
 The device firmware contents are in `packages/device`. In there you'll find two files - i.e. `config.sample.h` and `secrets.sample.h`. You need to modify these files and enter your settings. Then, save them as `config.h` and `secrets.h`, respectively.
